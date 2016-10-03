@@ -22,6 +22,4 @@ public:
   // Setters
   void setX(const double &);
   void setY(const double &);
-  
-  void afficher(std::ostream & stream) const;
 };

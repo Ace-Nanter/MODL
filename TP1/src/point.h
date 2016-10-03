@@ -13,6 +13,6 @@ public:
   Point();
   ~Point();
 
-  void afficher(std::ostream & stream) const;
+  virtual void afficher(std::ostream & stream) const;
 
 };

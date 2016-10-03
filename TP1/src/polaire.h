@@ -22,7 +22,4 @@ public:
   // Setters
   void setAngle(const double &);
   void setDistance(const double &);
-  
-  void afficher(std::ostream & stream) const;
-  
 };

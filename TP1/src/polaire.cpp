@@ -22,8 +22,7 @@ void Polaire::setDistance(const double & distance) {
   m_distance = distance;
 }
 
-
-void Polaire::afficher(std::ostream & stream) const {
+void Point::afficher(std::ostream & stream) const {
   stream << "(a=" << m_angle << ";d=" << m_distance << ")" ;
 }
 

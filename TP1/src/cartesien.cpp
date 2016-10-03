@@ -22,6 +22,6 @@ void Cartesien::setY(const double & y) {
   m_y = y;
 }
 
-void Cartesien::afficher(std::ostream & stream) const {
+void afficher(std::ostream & stream) const {
   stream << "(x=" << m_x << ";y=" << m_y << ")" ;
 }
