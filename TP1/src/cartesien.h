@@ -1,6 +1,7 @@
 #pragma once
 
 #include "point.h"
+#include "polaire.h"
 
 class Cartesien: public Point {
 
@@ -11,6 +12,7 @@ protected:
 public:
   // Constructeurs/Destructeurs
   Cartesien();
+  Cartesien(const Polaire &);
 	Cartesien(const double &, const double &);
 	~Cartesien();
 
@@ -22,4 +24,8 @@ public:
   // Setters
   void setX(const double &);
   void setY(const double &);
+
+  void convertir(Cartesien &) const;
+  void convertir(Polaire &) const;
+  void afficher(std::ostream & stream) const;
 };
