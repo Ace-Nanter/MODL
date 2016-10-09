@@ -2,6 +2,11 @@
 
 Cartesien::Cartesien() : m_x(0), m_y(0) { }
 
+Cartesien::Cartesien(const Cartesien & c) {
+  m_x = c.getX();
+  m_y = c.getY(); 
+}
+
 Cartesien::Cartesien(const Polaire & p) {
   m_x = (double) p.getDistance() * (double) cos(p.getAngle() * ((double) M_PI) / 180.0);
   m_y = ((double) p.getDistance() * (double) sin(p.getAngle() * ((double) M_PI) / 180.0));

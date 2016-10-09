@@ -2,6 +2,10 @@
 
 Polaire::Polaire() : m_angle(0.0), m_distance(0.0) { }
 
+Polaire::Polaire(const Polaire & p) {
+  m_distance = p.getDistance();
+  m_angle = p.getAngle();
+}
 Polaire::Polaire(const Cartesien & c) {
   double angle = atan2(c.getY(), c.getX()) * (180.0 / (double) M_PI);
   double distance = sqrt(c.getX() * c.getX() + c.getY() * c.getY());

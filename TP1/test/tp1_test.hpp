@@ -9,7 +9,7 @@
 #include <point.h>
 #include <cartesien.h>
 #include <polaire.h>
-//#include <nuage.hpp>
+#include <nuage.h>
 
 // Tests //-----------------------------------------------------------------------------------------
 
@@ -246,7 +246,7 @@ TEST ( TP1_Point, ConversionVersCartesien_V2 ) {
 }
 
 //----------------------------------------------------------------------------------------------- 18
-/*TEST ( TP1_Nuage, Ajout ) {
+TEST ( TP1_Nuage, Ajout ) {
  Cartesien p1(12.0,24.0);
  Polaire p2(13.0,25.0);
  Polaire p3(p1);
@@ -262,10 +262,10 @@ TEST ( TP1_Point, ConversionVersCartesien_V2 ) {
  n.ajouter(p4);
 
  EXPECT_EQ ( n.size(), 4u );
-}*/
+}
 
 //----------------------------------------------------------------------------------------------- 19
-/*TEST ( TP1_Nuage, Iterateurs ) {
+TEST ( TP1_Nuage, Iterateurs ) {
  Cartesien p1(12.0,24.0);
  Polaire p2(13.0,25.0);
  Polaire p3(p1);
@@ -303,10 +303,10 @@ TEST ( TP1_Point, ConversionVersCartesien_V2 ) {
  EXPECT_NEAR ( p7.getDistance(), 26.832815, 1e-3 );
  EXPECT_NEAR ( p8.getX(), 24.359251, 1e-3 );
  EXPECT_NEAR ( p8.getY(), 5.623776, 1e-3 );
-}*/
+}
 
 //--------------------------------------------------------------------------------------Commun 20-22
-/*double x[] = { 3,7,13,27 };
+double x[] = { 3,7,13,27 };
 double y[] = { 4,8,16,32 };
 
 Cartesien p1(x[0],y[0]);
@@ -314,10 +314,10 @@ Cartesien p2(x[1],y[1]);
 Cartesien p3(x[2],y[2]);
 Cartesien p4(x[3],y[3]);
 
-Nuage n;*/
+Nuage n;
 
 //----------------------------------------------------------------------------------------------- 20
-/*TEST ( TP1_Nuage, Barycentre ) {
+TEST ( TP1_Nuage, Barycentre ) {
  n.ajouter(p1);
  n.ajouter(p2);
  n.ajouter(p3);
@@ -327,24 +327,24 @@ Nuage n;*/
 
  EXPECT_DOUBLE_EQ ( b.getX(), (x[0]+x[1]+x[2]+x[3])/4 );
  EXPECT_DOUBLE_EQ ( b.getY(), (y[0]+y[1]+y[2]+y[3])/4 );
-}*/
+}
 
 //----------------------------------------------------------------------------------------------- 21
-/*TEST ( TP1_Nuage, BarycentreCartesien ) {
+TEST ( TP1_Nuage, BarycentreCartesien ) {
  Cartesien b = BarycentreCartesien()(n);
 
  EXPECT_DOUBLE_EQ ( b.getX(), (x[0]+x[1]+x[2]+x[3])/4 );
  EXPECT_DOUBLE_EQ ( b.getY(), (y[0]+y[1]+y[2]+y[3])/4 );
-}*/
+}
 
 //----------------------------------------------------------------------------------------------- 22
-/*TEST ( TP1_Nuage, BarycentrePolaire ) {
+TEST ( TP1_Nuage, BarycentrePolaire ) {
  Polaire p(Cartesien((x[0]+x[1]+x[2]+x[3])/4,(y[0]+y[1]+y[2]+y[3])/4));
  Polaire b = BarycentrePolaire()(n);
 
  EXPECT_DOUBLE_EQ ( b.getAngle(), p.getAngle() );
  EXPECT_DOUBLE_EQ ( b.getDistance(), p.getDistance() );
-}*/
+}
 
 // Fin //-------------------------------------------------------------------------------------------
 #endif

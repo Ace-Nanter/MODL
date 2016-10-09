@@ -12,6 +12,7 @@ protected:
 public:
   // Constructeurs/Destructeurs
   Polaire();
+  Polaire (const Polaire &);
   Polaire(const Cartesien &);
   Polaire(double const &, double const &);
 	~Polaire();

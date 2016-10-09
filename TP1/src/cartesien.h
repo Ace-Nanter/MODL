@@ -12,6 +12,7 @@ protected:
 public:
   // Constructeurs/Destructeurs
   Cartesien();
+  Cartesien(const Cartesien &);
   Cartesien(const Polaire &);
 	Cartesien(const double &, const double &);
 	~Cartesien();
