@@ -7,12 +7,15 @@
 
 //#include <cosinus.hpp>
 //#include <exponentielle.hpp>
+#include <point.h>
+#include <cartesien.h>
+#include <polaire.h>
 #include <nuage.h>
 
 // Tests //-----------------------------------------------------------------------------------------
 
 //------------------------------------------------------------------------------------------------ 1
-/*TEST ( TP2_Nuage, Ajout ) {
+TEST ( TP2_Nuage, Ajout ) {
  Nuage<Cartesien> n;
 
  EXPECT_EQ( n.size(), 0u );
@@ -23,10 +26,10 @@
  n.ajouter(Cartesien(34,56));
 
  EXPECT_EQ ( n.size(), 4u );
-}*/
+}
 
 //------------------------------------------------------------------------------------------------ 2
-/*TEST ( TP2_Nuage, Iterateurs ) {
+TEST ( TP2_Nuage, Iterateurs ) {
  Polaire p1(12,34);
  Polaire p2(56,78);
  Polaire p3(90,12);
@@ -53,10 +56,10 @@
  EXPECT_DOUBLE_EQ ( t[2].getDistance(), p3.getDistance() );
  EXPECT_DOUBLE_EQ ( t[3].getAngle(), p4.getAngle() );
  EXPECT_DOUBLE_EQ ( t[3].getDistance(), p4.getDistance() );
-}*/
+}
 
 //------------------------------------------------------------------------------------------------ 3
-/*TEST ( TP2_Nuage, BarycentreCartesien_V1 ) {
+TEST ( TP2_Nuage, BarycentreCartesien_V1 ) {
  Nuage<Cartesien> n;
 
  Cartesien p1(12,34);
@@ -84,7 +87,7 @@
 
  EXPECT_DOUBLE_EQ ( b3.getX(), (p1.getX()+p2.getX()+p3.getX()+p4.getX())/4 );
  EXPECT_DOUBLE_EQ ( b3.getY(), (p1.getY()+p2.getY()+p3.getY()+p4.getY())/4 );
-}*/
+}
 
 //----------------------------------------------------------------------------------------------- 4a
 /*TEST ( TP2_Nuage, BarycentrePolaire_V1 ) {
@@ -118,7 +121,7 @@
 }*/
 
 //----------------------------------------------------------------------------------------------- 4b
-/*TEST ( TP2_Nuage, BarycentrePolaire_V1 ) {
+TEST ( TP2_Nuage, BarycentrePolaire_V1 ) {
  Nuage<Polaire> n;
 
  Polaire p1(12,34);
@@ -149,7 +152,7 @@
 
  EXPECT_DOUBLE_EQ ( b3.getDistance(), (p1.getDistance()+p2.getDistance()
                                        +p3.getDistance()+p4.getDistance())/4 );
-}*/
+}
 
 //------------------------------------------------------------------------------------------------ 5
 /*TEST ( TP2_Nuage, BarycentreCartesien_V2 ) {

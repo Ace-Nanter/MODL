@@ -1,17 +1,17 @@
-#pragma once
+#ifndef __NUAGE_H__
+#define __NUAGE_H__
 
-#include <cstdlib>
 #include <vector>
-#include <typeinfo>
 
-#include "point.h"
-#include "cartesien.h"
-#include "polaire.h"
+#include <point.h>
+#include <cartesien.h>
+#include <polaire.h>
 
+template <typename T>
 class Nuage {
 
     protected:
-        std::vector<Point *> m_container;
+        std::vector<T> m_container;
 
     public:
         // Constructeurs/Destructeurs
@@ -19,17 +19,23 @@ class Nuage {
         ~Nuage();
 
         // Méthodes
-        void ajouter(const Cartesien &);
-        void ajouter(const Polaire &);
+        void ajouter(const T &);
         const int size() const;
         
-        typedef std::vector<Point *>::iterator iterator;
-        typedef std::vector<Point *>::const_iterator const_iterator;
+        typedef typename std::vector<T>::iterator iterator;
+        typedef typename std::vector<T>::const_iterator const_iterator;
         
         iterator begin() { return m_container.begin(); }
         iterator end() { return m_container.end(); }
 };
 
+template <typename T>
+T barycentre_v1(Nuage<T> &);
+
+Polaire barycentre_v1(Nuage<Polaire> &);
+
+#include "nuage.cxx"
+/*
 const Cartesien barycentre(Nuage &);
 
 class BarycentreCartesien {
@@ -47,3 +53,6 @@ class BarycentrePolaire {
 
     const Polaire operator()(Nuage &);
 };
+*/
+
+#endif

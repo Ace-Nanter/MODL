@@ -33,7 +33,7 @@ set ( ZZ3_HEADERS
       src/nuage.h
       src/point.h
       src/polaire.h
-      #src/vecteur.hpp
+      src/vecteur.h
     )
 
 set ( ZZ3_SOURCES
@@ -41,7 +41,7 @@ set ( ZZ3_SOURCES
       src/nuage.cpp
       src/point.cpp
       src/polaire.cpp
-      #src/vecteur.cpp
+      src/vecteur.cpp
     )
 
 set ( ZZ3_HEADERS_TEST
