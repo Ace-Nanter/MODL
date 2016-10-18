@@ -22,17 +22,23 @@ class Nuage {
         void ajouter(const T &);
         const int size() const;
         
+        typedef T value_type;
         typedef typename std::vector<T>::iterator iterator;
         typedef typename std::vector<T>::const_iterator const_iterator;
         
-        iterator begin() { return m_container.begin(); }
-        iterator end() { return m_container.end(); }
+        const_iterator begin() const { return m_container.begin(); }
+        const_iterator end() const { return m_container.end(); }
 };
 
+/*
 template <typename T>
 T barycentre_v1(Nuage<T> &);
 
 Polaire barycentre_v1(Nuage<Polaire> &);
+*/
+
+template <typename T>
+typename T::value_type barycentre_v2(const T & n);
 
 #include "nuage.cxx"
 /*

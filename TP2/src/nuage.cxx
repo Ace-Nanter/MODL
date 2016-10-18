@@ -15,14 +15,16 @@ const int Nuage<T>::size() const {
 }
 
 template <typename T>
-T barycentre_v1(Nuage<T> & n) {
+typename T::value_type barycentre_v2(const T & n) {
     
-    T ret;
+    typename T::value_type ret;
     Cartesien tmp;
     Cartesien result(0,0);
     
-    if(n.size() != 0) {
-        for(auto element : n) {  
+    int size = std::distance(n.begin(), n.end());
+
+    if(size != 0) {
+        for(const auto & element : n) {  
             // Conversion
             element.convertir(tmp);
 
@@ -39,15 +41,15 @@ T barycentre_v1(Nuage<T> & n) {
 
     return ret;
 }
-
-Polaire barycentre_v1(Nuage<Polaire> & n) {
+/*
+Polaire barycentre_v2(Nuage<Polaire> & n) {
     
     double angle = 0;
     double distance = 0;
     Polaire result(0, 0);
 
     if(n.size() != 0) {
-        for(auto element : n) {
+        for(const auto & element : n) {
 
             // Calcul barycentre
             distance += element.getDistance();
@@ -62,7 +64,7 @@ Polaire barycentre_v1(Nuage<Polaire> & n) {
 
     return result;
 }
-
+*/
 /*
 const Cartesien barycentre(Nuage & n) {
   double x = 0, y = 0;

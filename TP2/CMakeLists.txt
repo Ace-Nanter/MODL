@@ -33,10 +33,11 @@ set ( ZZ3_HEADERS
       src/cartesien.h
       src/polaire.h
       src/nuage.h
-      #src/cosinus.hpp
-      #src/exponentielle.hpp
-      #src/factorielle.hpp
-      #src/puissance.hpp
+      src/cosinus.h
+      src/sinus.h
+      src/exponentielle.h
+      src/factorielle.h
+      src/puissance.h
     )
 
 set ( ZZ3_SOURCES
@@ -55,12 +56,6 @@ set ( ZZ3_SOURCES_TEST
 include_directories ( src/ )
 
 # Executables #-------------------------------------------------------------------------------------
-add_executable ( ${CMAKE_PROJECT_NAME}_nuage
-                 src/main_nuage.cpp
-                 ${ZZ3_HEADERS}
-                 ${ZZ3_SOURCES}
-               )
-
 add_executable ( ${CMAKE_PROJECT_NAME}_metaprog
                  src/main_metaprog.cpp
                  ${ZZ3_HEADERS}
@@ -77,9 +72,6 @@ add_executable ( ${CMAKE_PROJECT_NAME}_test
                )
 
 # Build #-------------------------------------------------------------------------------------------
-set_target_properties ( ${CMAKE_PROJECT_NAME}_nuage PROPERTIES LINKER_LANGUAGE C )
-target_link_libraries ( ${CMAKE_PROJECT_NAME}_nuage ${CMAKE_THREAD_LIBS_INIT} )
-
 set_target_properties ( ${CMAKE_PROJECT_NAME}_metaprog PROPERTIES LINKER_LANGUAGE C )
 target_link_libraries ( ${CMAKE_PROJECT_NAME}_metaprog ${CMAKE_THREAD_LIBS_INIT} )
 

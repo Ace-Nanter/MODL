@@ -11,6 +11,11 @@
 #include <cartesien.h>
 #include <polaire.h>
 #include <nuage.h>
+#include <factorielle.h>
+#include <puissance.h>
+#include <exponentielle.h>
+#include <cosinus.h>
+#include <sinus.h>
 
 // Tests //-----------------------------------------------------------------------------------------
 
@@ -59,7 +64,7 @@ TEST ( TP2_Nuage, Iterateurs ) {
 }
 
 //------------------------------------------------------------------------------------------------ 3
-TEST ( TP2_Nuage, BarycentreCartesien_V1 ) {
+/*TEST ( TP2_Nuage, BarycentreCartesien_V1 ) {
  Nuage<Cartesien> n;
 
  Cartesien p1(12,34);
@@ -87,7 +92,7 @@ TEST ( TP2_Nuage, BarycentreCartesien_V1 ) {
 
  EXPECT_DOUBLE_EQ ( b3.getX(), (p1.getX()+p2.getX()+p3.getX()+p4.getX())/4 );
  EXPECT_DOUBLE_EQ ( b3.getY(), (p1.getY()+p2.getY()+p3.getY()+p4.getY())/4 );
-}
+}*/
 
 //----------------------------------------------------------------------------------------------- 4a
 /*TEST ( TP2_Nuage, BarycentrePolaire_V1 ) {
@@ -121,7 +126,7 @@ TEST ( TP2_Nuage, BarycentreCartesien_V1 ) {
 }*/
 
 //----------------------------------------------------------------------------------------------- 4b
-TEST ( TP2_Nuage, BarycentrePolaire_V1 ) {
+/*TEST ( TP2_Nuage, BarycentrePolaire_V1 ) {
  Nuage<Polaire> n;
 
  Polaire p1(12,34);
@@ -152,10 +157,10 @@ TEST ( TP2_Nuage, BarycentrePolaire_V1 ) {
 
  EXPECT_DOUBLE_EQ ( b3.getDistance(), (p1.getDistance()+p2.getDistance()
                                        +p3.getDistance()+p4.getDistance())/4 );
-}
+}*/
 
 //------------------------------------------------------------------------------------------------ 5
-/*TEST ( TP2_Nuage, BarycentreCartesien_V2 ) {
+TEST ( TP2_Nuage, BarycentreCartesien_V2 ) {
  Nuage<Cartesien> n;
 
  Cartesien p1(12,34);
@@ -183,10 +188,10 @@ TEST ( TP2_Nuage, BarycentrePolaire_V1 ) {
 
  EXPECT_DOUBLE_EQ ( b3.getX(), (p1.getX()+p2.getX()+p3.getX()+p4.getX())/4 );
  EXPECT_DOUBLE_EQ ( b3.getY(), (p1.getY()+p2.getY()+p3.getY()+p4.getY())/4 );
-}*/
+}
 
 //------------------------------------------------------------------------------------------------ 6
-/*TEST ( TP2_Nuage, BarycentreCartesienVecteur ) {
+TEST ( TP2_Nuage, BarycentreCartesienVecteur ) {
  std::vector<Cartesien> n;
 
  Cartesien p1(12,34);
@@ -214,10 +219,10 @@ TEST ( TP2_Nuage, BarycentrePolaire_V1 ) {
 
  EXPECT_DOUBLE_EQ ( b3.getX(), (p1.getX()+p2.getX()+p3.getX()+p4.getX())/4 );
  EXPECT_DOUBLE_EQ ( b3.getY(), (p1.getY()+p2.getY()+p3.getY()+p4.getY())/4 );
-}*/
+}
 
 //------------------------------------------------------------------------------------------------ 7
-/*TEST ( TP2_Nuage, BarycentrePolaire_V2 ) {
+TEST ( TP2_Nuage, BarycentrePolaire_V2 ) {
  std::vector<Polaire> n;
 
  Polaire p1(12,34);
@@ -245,44 +250,44 @@ TEST ( TP2_Nuage, BarycentrePolaire_V1 ) {
 
  EXPECT_NEAR ( b3.getAngle(), 43.017260, 1e-3 );
  EXPECT_NEAR ( b3.getDistance(), 42.159772, 1e-3 );
-}*/
+}
 
 //------------------------------------------------------------------------------------------------ 8
-/*TEST ( TP2_Metaprog, Factorielle ) {
+TEST ( TP2_Metaprog, Factorielle ) {
  unsigned long f1 = Factorielle<1>::valeur;
  unsigned long f5 = Factorielle<5>::valeur;
 
  EXPECT_EQ ( f1, 1u );
  EXPECT_EQ ( f5, 5u*4u*3u*2u );
-}*/
+}
 
 //------------------------------------------------------------------------------------------------ 9
-/*TEST ( TP2_Metaprog, Puissance ) {
+TEST ( TP2_Metaprog, Puissance ) {
  EXPECT_DOUBLE_EQ ( Puissance<0>::valeur(3.0), 1.0 );
  EXPECT_DOUBLE_EQ ( Puissance<1>::valeur(3.0), 3.0 );
  EXPECT_DOUBLE_EQ ( Puissance<4>::valeur(3.0), 3.0*3.0*3.0*3.0 );
-}*/
+}
 
 //----------------------------------------------------------------------------------------------- 10
-/*TEST ( TP2_Metaprog, Exponentielle ) {
+TEST ( TP2_Metaprog, Exponentielle ) {
  EXPECT_NEAR ( Exponentielle<4>::valeur(0.0), std::exp(0.0), 1e-3 );
  EXPECT_NEAR ( Exponentielle<10>::valeur(-2.5), std::exp(-2.5), 1e-3 );
  EXPECT_NEAR ( Exponentielle<7>::valeur(1.4), std::exp(1.4), 1e-3 );
-}*/
+}
 
 //----------------------------------------------------------------------------------------------- 11
-/*TEST ( TP2_Metaprog, Cosinus ) {
+TEST ( TP2_Metaprog, Cosinus ) {
  EXPECT_NEAR ( Cosinus<1>::valeur(0.0), std::cos(0.0), 1e-3 );
  EXPECT_NEAR ( Cosinus<4>::valeur(-2.0), std::cos(-2.0), 1e-3 );
  EXPECT_NEAR ( Cosinus<3>::valeur(1.0), std::cos(1.0), 1e-3 );
-}*/
+}
 
 //----------------------------------------------------------------------------------------------- 12
-/*TEST ( TP2_Metaprog, Sinus ) {
+TEST ( TP2_Metaprog, Sinus ) {
  EXPECT_NEAR ( Sinus<3>::valeur(0.0), std::sin(0.0), 1e-3 );
  EXPECT_NEAR ( Sinus<5>::valeur(-2.0), std::sin(-2.0), 1e-3 );
  EXPECT_NEAR ( Sinus<4>::valeur(1.0), std::sin(1.0), 1e-3 );
-}*/
+}
 
 // Fin //-------------------------------------------------------------------------------------------
 #endif
