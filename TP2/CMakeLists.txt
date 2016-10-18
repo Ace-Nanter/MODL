@@ -1,5 +1,5 @@
 # Project #-----------------------------------------------------------------------------------------
-project ( tp1 )
+project ( tp2 )
 
 cmake_minimum_required ( VERSION 2.8.9 )
 
@@ -29,19 +29,21 @@ message ( STATUS "Compiler flags: ${CMAKE_CXX_FLAGS}" )
 
 # Sources #-----------------------------------------------------------------------------------------
 set ( ZZ3_HEADERS
-      src/cartesien.h
-      src/nuage.h
       src/point.h
+      src/cartesien.h
       src/polaire.h
-      src/vecteur.h
+      src/nuage.h
+      #src/cosinus.hpp
+      #src/exponentielle.hpp
+      #src/factorielle.hpp
+      #src/puissance.hpp
     )
 
 set ( ZZ3_SOURCES
       src/cartesien.cpp
-      src/nuage.cpp
       src/point.cpp
       src/polaire.cpp
-      src/vecteur.cpp
+      #src/nuage.cxx
     )
 
 set ( ZZ3_HEADERS_TEST
@@ -53,14 +55,14 @@ set ( ZZ3_SOURCES_TEST
 include_directories ( src/ )
 
 # Executables #-------------------------------------------------------------------------------------
-add_executable ( ${CMAKE_PROJECT_NAME}_point
-                 src/main_point.cpp
+add_executable ( ${CMAKE_PROJECT_NAME}_nuage
+                 src/main_nuage.cpp
                  ${ZZ3_HEADERS}
                  ${ZZ3_SOURCES}
                )
 
-add_executable ( ${CMAKE_PROJECT_NAME}_vecteur
-                 src/main_vecteur.cpp
+add_executable ( ${CMAKE_PROJECT_NAME}_metaprog
+                 src/main_metaprog.cpp
                  ${ZZ3_HEADERS}
                  ${ZZ3_SOURCES}
                )
@@ -75,11 +77,11 @@ add_executable ( ${CMAKE_PROJECT_NAME}_test
                )
 
 # Build #-------------------------------------------------------------------------------------------
-set_target_properties ( ${CMAKE_PROJECT_NAME}_point PROPERTIES LINKER_LANGUAGE C )
-target_link_libraries ( ${CMAKE_PROJECT_NAME}_point ${CMAKE_THREAD_LIBS_INIT} )
+set_target_properties ( ${CMAKE_PROJECT_NAME}_nuage PROPERTIES LINKER_LANGUAGE C )
+target_link_libraries ( ${CMAKE_PROJECT_NAME}_nuage ${CMAKE_THREAD_LIBS_INIT} )
 
-set_target_properties ( ${CMAKE_PROJECT_NAME}_vecteur PROPERTIES LINKER_LANGUAGE C )
-target_link_libraries ( ${CMAKE_PROJECT_NAME}_vecteur ${CMAKE_THREAD_LIBS_INIT} )
+set_target_properties ( ${CMAKE_PROJECT_NAME}_metaprog PROPERTIES LINKER_LANGUAGE C )
+target_link_libraries ( ${CMAKE_PROJECT_NAME}_metaprog ${CMAKE_THREAD_LIBS_INIT} )
 
 set_target_properties ( ${CMAKE_PROJECT_NAME}_test PROPERTIES LINKER_LANGUAGE C )
 target_link_libraries ( ${CMAKE_PROJECT_NAME}_test ${CMAKE_THREAD_LIBS_INIT} )
