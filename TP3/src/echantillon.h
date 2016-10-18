@@ -17,10 +17,11 @@ class Echantillon {
 
         // Accesseurs
         const int getTaille() const;
+        const bool empty() const;
         void ajouter(const double &);
         void ajouter(const Valeur &);
-        const Valeur getMinimum() const;
-        const Valeur getMaximum() const;
+        const Valeur getMinimum() const throw (std::domain_error);
+        const Valeur getMaximum() const throw (std::domain_error);
 };
 
 

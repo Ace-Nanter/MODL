@@ -86,7 +86,7 @@ TEST ( TP3_Echantillon, MinMax ) {
 }
 
 //------------------------------------------------------------------------------------------------ 8
-/*TEST ( TP3_Echantillon, MinMaxException ) {
+TEST ( TP3_Echantillon, MinMaxException ) {
  Echantillon e;
 
  int error = 0;
@@ -106,7 +106,7 @@ TEST ( TP3_Echantillon, MinMax ) {
  catch (...) { error=1; }
 
  EXPECT_EQ ( error, 2 );
-}*/
+}
 
 //------------------------------------------------------------------------------------------------ 9
 /*TEST ( TP3_Echantillon, Indice ) {
