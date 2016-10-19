@@ -5,7 +5,7 @@ Echantillon::Echantillon() { }
 
 Echantillon::~Echantillon() { }
 
-const int Echantillon::getTaille() const {
+const unsigned int Echantillon::getTaille() const {
     return m_container.size();
 }
 
@@ -19,6 +19,14 @@ void Echantillon::ajouter(const double & v) {
 
 void Echantillon::ajouter(const Valeur & v) {
     m_container.push_back(v);
+}
+
+const Valeur & Echantillon::getValeur(const unsigned int & i) const {
+    if(i < 0 || i >= getTaille() || empty()) {
+        throw std::out_of_range("Out of range !");
+    }
+
+    return m_container[i];
 }
 
 const Valeur Echantillon::getMinimum() const throw (std::domain_error) {

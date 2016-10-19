@@ -7,7 +7,8 @@
 
 #include <valeur.h>
 #include <echantillon.h>
-//#include <histogramme.hpp>
+#include <classe.h>
+#include <histogramme.h>
 //#include <comparateur_quantite.hpp>
 
 //typedef Histogramme Histo;
@@ -109,7 +110,7 @@ TEST ( TP3_Echantillon, MinMaxException ) {
 }
 
 //------------------------------------------------------------------------------------------------ 9
-/*TEST ( TP3_Echantillon, Indice ) {
+TEST ( TP3_Echantillon, Indice ) {
  Echantillon e;
 
  double v[] = { 5.0, 10.0, 15.0, 20.0 };
@@ -133,10 +134,10 @@ TEST ( TP3_Echantillon, MinMaxException ) {
  catch (...) { error=1; }
 
  EXPECT_EQ( error, 2 );
-}*/
+}
 
 //----------------------------------------------------------------------------------------------- 10
-/*TEST ( TP3_Classe, Constructeur ) {
+TEST ( TP3_Classe, Constructeur ) {
  const double a = 12.0;
  const double b = 24.0;
 
@@ -145,10 +146,10 @@ TEST ( TP3_Echantillon, MinMaxException ) {
  EXPECT_DOUBLE_EQ ( c.getBorneInf(), a );
  EXPECT_DOUBLE_EQ ( c.getBorneSup(), b );
  EXPECT_EQ ( c.getQuantite(), 0u );
-}*/
+}
 
 //----------------------------------------------------------------------------------------------- 11
-/*TEST ( TP3_Classe, Accesseurs ) {
+TEST ( TP3_Classe, Accesseurs ) {
  const double   a = 12.0;
  const double   b = 24.0;
  const unsigned n = 7;
@@ -166,10 +167,10 @@ TEST ( TP3_Echantillon, MinMaxException ) {
  c.ajouter();
 
  EXPECT_EQ ( c.getQuantite(), n+1 );
-}*/
+}
 
 //----------------------------------------------------------------------------------------------- 12
-/*TEST ( TP3_Histogramme, Constructeur ) {
+TEST ( TP3_Histogramme, Constructeur ) {
  Histo h(5.0,15.0,5);
 
  EXPECT_EQ ( h.getClasses().size(), 5u );
@@ -187,10 +188,10 @@ TEST ( TP3_Echantillon, MinMaxException ) {
   ++it;
   ++i;
  }
-}*/
+}
 
 //----------------------------------------------------------------------------------------------- 13
-/*TEST ( TP3_Histogramme, Echantillon ) {
+TEST ( TP3_Histogramme, Echantillon ) {
  double v[] = { 7.0, 9.0, 8.0, 5.0, 10.0, 14.0, 13.0, 6.0, 5.5, 13.5 };
  double n[] = { 3, 2, 2, 0, 3 };
 
@@ -210,7 +211,7 @@ TEST ( TP3_Echantillon, MinMaxException ) {
   ++it;
   ++i;
  }
-}*/
+}
 
 //----------------------------------------------------------------------------------------------- 14
 /*TEST ( TP3_Histogramme, Generique ) {
