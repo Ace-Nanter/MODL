@@ -8,6 +8,7 @@
 #include <valeur.h>
 #include <echantillon.h>
 #include <classe.h>
+#include <histo.h>
 #include <histogramme.h>
 //#include <comparateur_quantite.hpp>
 
@@ -214,7 +215,7 @@ TEST ( TP3_Histogramme, Echantillon ) {
 }
 
 //----------------------------------------------------------------------------------------------- 14
-/*TEST ( TP3_Histogramme, Generique ) {
+TEST ( TP3_Histogramme, Generique ) {
  typedef Histogramme<> histo_t;
 
  histo_t h(5.0,15.0,5);
@@ -234,7 +235,7 @@ TEST ( TP3_Histogramme, Echantillon ) {
   ++it;
   ++i;
  }
-}*/
+}
 
 //----------------------------------------------------------------------------------------------- 15
 /*TEST ( TP3_Histogramme, FoncteurGreater ) {

@@ -4,11 +4,13 @@ Classe::Classe()
     : m_borneInf(0), m_borneSup(0), m_quantite(0)
 { }
 
-Classe::Classe(const double & a, const double & b)
+Classe::Classe(const double a, const double b)
     : m_borneInf(a), m_borneSup(b), m_quantite(0)
 { }
 
-Classe::~Classe() { }
+Classe::Classe(const double inf, const double sup, const double quantite)
+    : m_borneInf(inf), m_borneSup(sup), m_quantite(quantite)
+{ }
 
 const double & Classe::getBorneInf() const {
     return m_borneInf;
@@ -36,4 +38,12 @@ void Classe::setQuantite(const unsigned int & n) {
 
 void Classe::ajouter() {
     m_quantite++;
+}
+
+const bool Classe::operator<(const Classe & c) const {
+    return getBorneInf() < c.getBorneInf();
+}
+
+const bool Classe::operator>(const Classe & c) const {
+    return getBorneInf() > c.getBorneInf();
 }

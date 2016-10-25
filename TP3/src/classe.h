@@ -13,8 +13,8 @@ class Classe {
 
         // Constructeurs/Destructeur
         Classe();
-        Classe(const double &, const double &);
-        ~Classe();
+        Classe(const double, const double);
+        Classe(const double, const double, const double);
 
         // Accesseurs
         const double & getBorneInf() const;
@@ -24,6 +24,9 @@ class Classe {
         void setBorneSup(const double &);
         void setQuantite(const unsigned int &);
         void ajouter();
+
+        const bool operator< (const Classe &) const;
+        const bool operator> (const Classe &) const;
 };
 
 

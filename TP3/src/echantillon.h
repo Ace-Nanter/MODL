@@ -9,7 +9,7 @@
 class Echantillon {
     protected:
         std::vector<Valeur> m_container;
-
+        
     public:
         // Constructeur / Destructeurs
         Echantillon();
