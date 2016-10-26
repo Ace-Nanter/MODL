@@ -318,7 +318,7 @@ TEST ( TP3_Histogramme, Conversion ) {
 }
 
 //----------------------------------------------------------------------------------------------- 18
-/*TEST ( TP3_Etudiant, Constructeur ) {
+TEST ( TP3_Etudiant, Constructeur ) {
  const double a = 12.0;
  const char * n = "Machin";
 
@@ -327,19 +327,19 @@ TEST ( TP3_Histogramme, Conversion ) {
  EXPECT_DOUBLE_EQ ( v.getNombre(), a );
  EXPECT_DOUBLE_EQ ( v.getNote(), a );
  EXPECT_STREQ ( v.getEtudiant().c_str(), n );
-}*/
+}
 
 //----------------------------------------------------------------------------------------------- 19
-/*TEST ( TP3_Etudiant, ConstructeurDefaut ) {
+TEST ( TP3_Etudiant, ConstructeurDefaut ) {
  Valeur v;
 
  EXPECT_DOUBLE_EQ ( v.getNombre(), 0.0 );
  EXPECT_DOUBLE_EQ ( v.getNote(), 0.0 );
  EXPECT_STREQ ( v.getEtudiant().c_str(), "inconnu" );
-}*/
+}
 
 //----------------------------------------------------------------------------------------------- 20
-/*TEST ( TP3_Etudiant, Accesseurs ) {
+TEST ( TP3_Etudiant, Accesseurs ) {
  const double a = 12.0;
  const char * n = "Machin";
 
@@ -351,19 +351,19 @@ TEST ( TP3_Histogramme, Conversion ) {
  EXPECT_DOUBLE_EQ ( v.getNombre(), a );
  EXPECT_DOUBLE_EQ ( v.getNote(), a );
  EXPECT_STREQ ( v.getEtudiant().c_str(), n );
-}*/
+}
 
 //----------------------------------------------------------------------------------------------- 21
-/*TEST ( TP3_Etudiant, AccesseursConstants ) {
+TEST ( TP3_Etudiant, AccesseursConstants ) {
  const Valeur v;
 
  EXPECT_DOUBLE_EQ ( v.getNombre(), 0.0 );
  EXPECT_DOUBLE_EQ ( v.getNote(), 0.0 );
  EXPECT_STREQ ( v.getEtudiant().c_str(), "inconnu" );
-}*/
+}
 
 //----------------------------------------------------------------------------------------------- 22
-/*TEST ( TP3_Valeurs, Association ) {
+TEST ( TP3_Valeurs, Association ) {
  typedef Histogramme<> histo_t;
 
  double v[] = { 7.0, 9.0, 8.0, 5.0, 10.0, 14.0, 13.0, 6.0, 5.5, 13.5 };
@@ -392,7 +392,7 @@ TEST ( TP3_Histogramme, Conversion ) {
   ++it;
   ++i;
  }
-}*/
+}
 
 //----------------------------------------------------------------------------------------------- 23
 /*TEST ( TP3_Valeurs, Intervalle ) {
