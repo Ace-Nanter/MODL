@@ -238,7 +238,7 @@ TEST ( TP3_Histogramme, Generique ) {
 }
 
 //----------------------------------------------------------------------------------------------- 15
-/*TEST ( TP3_Histogramme, FoncteurGreater ) {
+TEST ( TP3_Histogramme, FoncteurGreater ) {
  typedef Histogramme< std::greater<Classe> > histo_t;
 
  histo_t h(5.0,15.0,5);
@@ -258,10 +258,10 @@ TEST ( TP3_Histogramme, Generique ) {
   EXPECT_EQ ( it->getQuantite(), 0u );
   ++it;
  }
-}*/
+}
 
 //----------------------------------------------------------------------------------------------- 16
-/*TEST ( TP3_Histogramme, ComparateurQuantite ) {
+TEST ( TP3_Histogramme, ComparateurQuantite ) {
  typedef Histogramme< ComparateurQuantite<Classe> > histo_t;
 
  double v[] = { 7.0, 9.0, 8.0, 5.0, 10.0, 14.0, 13.0, 6.0, 5.5, 13.5 };
@@ -286,10 +286,10 @@ TEST ( TP3_Histogramme, Generique ) {
   ++it;
   ++i;
  }
-}*/
+}
 
 //------------------------------------------------------------------------------------------------17
-/*TEST ( TP3_Histogramme, Conversion ) {
+TEST ( TP3_Histogramme, Conversion ) {
  typedef Histogramme< std::greater<Classe> >        histo1_t;
  typedef Histogramme< ComparateurQuantite<Classe> > histo2_t;
 
@@ -315,7 +315,7 @@ TEST ( TP3_Histogramme, Generique ) {
   ++it;
   ++i;
  }
-}*/
+}
 
 //----------------------------------------------------------------------------------------------- 18
 /*TEST ( TP3_Etudiant, Constructeur ) {

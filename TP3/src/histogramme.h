@@ -17,11 +17,14 @@ class Histogramme {
     public:
         
         // Constructeurs/Destructeurs
+        template <class U>
+        Histogramme(const Histogramme<U> & h);
         Histogramme(const double &, const double &, const unsigned int &);
 
         // Accesseurs
         const std::set<Classe, T> & getClasses() const;
 
+        void ajouter(const double);
         void ajouter(const Echantillon &);
 
         typedef typename std::set<Classe, T> classes_t;

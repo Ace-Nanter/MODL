@@ -30,4 +30,14 @@ class Classe {
 };
 
 
+template <typename> class ComparateurQuantite{
+    //static_assert(false, "Not implemented");
+};
+
+template <>
+class ComparateurQuantite<Classe> {
+    public:
+        bool operator()(const Classe &, const Classe &) const;
+};
+
 #endif

@@ -47,3 +47,10 @@ const bool Classe::operator<(const Classe & c) const {
 const bool Classe::operator>(const Classe & c) const {
     return getBorneInf() > c.getBorneInf();
 }
+
+// Foncteur
+bool ComparateurQuantite<Classe>::operator()(const Classe & c1, const Classe & c2) const {
+    return (c1.getQuantite() == c2.getQuantite()) ?
+        c1.getBorneInf() < c2.getBorneInf()
+        : c1.getQuantite() > c2.getQuantite();
+}
