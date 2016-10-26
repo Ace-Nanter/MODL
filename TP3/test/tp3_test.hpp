@@ -12,8 +12,6 @@
 #include <histogramme.h>
 //#include <comparateur_quantite.hpp>
 
-//typedef Histogramme Histo;
-//typedef Histogramme<> Histo;
 
 // Tests //-----------------------------------------------------------------------------------------
 
@@ -395,7 +393,7 @@ TEST ( TP3_Valeurs, Association ) {
 }
 
 //----------------------------------------------------------------------------------------------- 23
-/*TEST ( TP3_Valeurs, Intervalle ) {
+TEST ( TP3_Valeurs, Intervalle ) {
  typedef Histogramme<> histo_t;
 
  double v[] = { 7.0, 9.0, 8.0, 5.0, 10.0, 14.0, 13.0, 6.0, 5.5, 13.5 };
@@ -415,11 +413,11 @@ TEST ( TP3_Valeurs, Association ) {
  int                   i        = 0;
 
  while (it!=interval.second) {
-  EXPECT_DOUBLE_EQ ( it->second.getNote(), notes[i] );
+  EXPECT_DOUBLE_EQ (it->second.getNote(), notes[i] );
   ++i;
   ++it;
  }
-}*/
+}
 
 // Fin //-------------------------------------------------------------------------------------------
 #endif

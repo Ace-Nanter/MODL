@@ -29,6 +29,11 @@ const std::multimap<Classe, Valeur> & Histogramme<T>::getValeurs() const {
 }
 
 template <class T>
+std::pair<typename Histogramme<T>::it_valeurs_t, typename Histogramme<T>::it_valeurs_t> Histogramme<T>::getValeurs(const Classe & c) const {
+    return m_values.equal_range(c);
+}
+
+template <class T>
 void Histogramme<T>::ajouter(const double d) {
 
     typename Histogramme<T>::classes_t::iterator it = m_container.begin();
