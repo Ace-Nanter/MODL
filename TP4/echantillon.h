@@ -4,6 +4,7 @@
 #include <iostream>
 #include <vector>
 #include <algorithm>
+#include <cmath>
 #include "valeur.h"
 
 class Echantillon {
@@ -23,6 +24,10 @@ class Echantillon {
         const Valeur & getValeur(const unsigned int &) const;
         const Valeur getMinimum() const throw (std::domain_error);
         const Valeur getMaximum() const throw (std::domain_error);
+
+        // Opérations
+        const double Moyenne() const;
+        const double EcartType() const;
 };
 
 

@@ -47,3 +47,12 @@ const Valeur Echantillon::getMaximum() const throw (std::domain_error) {
     it = std::max_element(m_container.begin(), m_container.end(), ValeurComparaison());
     return *it;
 }
+
+const double Echantillon::Moyenne() const {
+    double value = 0;
+    for(Valeur v : m_container) {
+        value += v.getNombre();
+    }
+
+    return (value / getTaille());
+}
