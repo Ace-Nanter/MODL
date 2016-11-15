@@ -5,50 +5,77 @@
 
 // Fonction principale //---------------------------------------------------------------------------
 int main(void) {
- Vecteur v1;
- Vecteur v2;
 
- complexe_t::stats();
+    Vecteur v1;
+    Vecteur v2;
 
- for (unsigned i = 0; i<v1.getTaille(); ++i) v1[i]=complexe_t(10*i,i*i);
- for (unsigned i = 0; i<v2.getTaille(); ++i) v2[i]=complexe_t(i,i+1);
+    complexe_t::stats();
 
- std::cout << std::endl << "v1 = " << v1 << std::endl;
- std::cout << "v2 = " << v2 << std::endl;
- complexe_t::stats();
+    unsigned i = 0;
+    for (auto & e : v1) {
+        e = complexe_t(10 * i, i * i);
+        i++;
+    }
 
- Vecteur v3 = v1;
+    // for (unsigned i = 0; i<v1.getTaille(); ++i) v1[i]=complexe_t(10*i,i*i);
 
- std::cout << std::endl << "v3 = " << v3 << std::endl;
- complexe_t::stats();
 
- Vecteur v4;
 
- v4=v1+v2;
+    i = 0;
+    for (auto & e : v2) {
+        e = complexe_t(i, i + 1);
+        i++;
+    }
 
- std::cout << std::endl << "v4 = " << v4 << std::endl;
- complexe_t::stats();
+    // for (unsigned i = 0; i<v2.getTaille(); ++i) v2[i]=complexe_t(i,i+1);
 
- Vecteur v5;
+    std::cout << std::endl << "v1 = " << v1 << std::endl;
+    std::cout << "v2 = " << v2 << std::endl;
+    complexe_t::stats();
 
- v5=v1*v2;
+    Vecteur v3 = v1;
 
- std::cout << std::endl << "v5 = " << v5 << std::endl;
- complexe_t::stats();
+    std::cout << std::endl << "v3 = " << v3 << std::endl;
+    complexe_t::stats();
 
- std::deque<complexe_t> liste;
+    Vecteur v4;
 
- for (unsigned i = 0; i<v5.getTaille(); ++i) liste.push_back(v5[i]);
+    v4=v1+v2;
 
- std::cout << std::endl << "liste = v5" << std::endl;
- complexe_t::stats();
+    std::cout << std::endl << "v4 = " << v4 << std::endl;
+    complexe_t::stats();
 
- std::sort(liste.begin(),liste.end(),ComparateurComplexe());
+    Vecteur v5;
 
- std::cout << std::endl;
- for (unsigned i = 0; i<liste.size(); ++i) std::cout << liste[i] << " ";
- std::cout << std::endl;
- complexe_t::stats();
+    v5=v1*v2;
+
+    std::cout << std::endl << "v5 = " << v5 << std::endl;
+    complexe_t::stats();
+
+    std::deque<complexe_t> liste;
+
+    for (auto e : v5) {
+        liste.push_back(e);
+    }
+
+    // for (unsigned i = 0; i<v5.getTaille(); ++i) liste.push_back(v5[i]);
+
+    std::cout << std::endl << "liste = v5" << std::endl;
+    complexe_t::stats();
+
+    std::sort(liste.begin(),liste.end(),ComparateurComplexe());
+
+    std::cout << std::endl;
+
+    for(auto & e : liste) {
+        std::cout << e << " ";
+    }
+
+    //for (unsigned i = 0; i<liste.size(); ++i) std::cout << liste[i] << " ";
+
+    std::cout << std::endl;
+    
+    complexe_t::stats();
 }
 
 // Fin //-------------------------------------------------------------------------------------------
