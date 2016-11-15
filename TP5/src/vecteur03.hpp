@@ -93,7 +93,7 @@ inline std::ostream & operator<<(std::ostream & flux,const Vecteur & v) {
 inline Vecteur operator+(const Vecteur & v1,const Vecteur & v2) {
     Vecteur v;
     for (unsigned i = 0; i<v1.getTaille(); ++i)
-      v[i]=v1[i]+v2[i];
+      v[i] = v1[i] + v2[i];
 
  return v;
 }

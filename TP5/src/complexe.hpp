@@ -18,7 +18,7 @@ struct Complexe {
 using complexe_t = Mouchard<Complexe>;
 //using complexe_t = Complexe;
 
-// Surcharge opérateurs //--------------------------------------------------------------------------
+// Surcharge opÃ©rateurs //--------------------------------------------------------------------------
 
 //-----------------------------------------------------------------------------------------operator+
 inline complexe_t operator+(const complexe_t & a,const complexe_t & b) {

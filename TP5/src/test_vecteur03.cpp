@@ -63,7 +63,14 @@ int main(void) {
     std::cout << std::endl << "liste = v5" << std::endl;
     complexe_t::stats();
 
-    std::sort(liste.begin(),liste.end(),ComparateurComplexe());
+    // Definition lambda
+    auto comparateur = [] (const complexe_t & c1, const complexe_t & c2)
+    {
+        return (c1.reel < c2.reel || (c1.reel==c2.reel && c1.imaginaire < c2.imaginaire));
+    };
+
+    // std::sort(liste.begin(), liste.end(), ComparateurComplexe());
+    std::sort(liste.begin(),liste.end(), comparateur);
 
     std::cout << std::endl;
 
